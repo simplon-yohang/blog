@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link  rel="stylesheet" href="{{asset('css/style.css')}}"/>
+    </head>
+    <body>
+        <div>
+          <p>{{article.id}}</p>
+          <p>{{article.titre}}</p>
+          <p>{{article.contenu}}</p>
+      </div>
+
+      <p><a href="{{ path('ex_blog_homepage') }}">retour articles</a></p>
+    </body>
+</html>

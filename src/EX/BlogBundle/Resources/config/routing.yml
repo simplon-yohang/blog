@@ -1,0 +1,31 @@
+ex_blog_homepage:
+    path:     /
+    defaults: { _controller: EXBlogBundle:Default:index }
+
+ex_blog_pagedeux:
+    path:    /view/{id}
+    defaults: { _controller: EXBlogBundle:Default:view }
+
+ex_blog_ajoute:
+    path:    /ajouter/
+    defaults: { _controller: EXBlogBundle:Default:ajouter }
+
+ex_blog_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: EXBlogBundle:Default:supprimer }
+
+ex_blog_modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: EXBlogBundle:Default:modifier }
+
+ex_blog_inscription:
+    path:     /inscription/
+    defaults: { _controller: EXBlogBundle:Default:inscription }
+
+ex_blog_connexion:
+    path:     /connexion/
+    defaults: { _controller: EXBlogBundle:Default:connexion }
+
+ex_blog_deconnexion:
+    path:     /deconnexion/
+    defaults: { _controller: EXBlogBundle:Default:deconnexion }

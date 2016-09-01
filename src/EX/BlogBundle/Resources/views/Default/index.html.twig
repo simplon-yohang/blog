@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon Blog!</title>
+  <link  rel="stylesheet" href="{{asset('css/style.css')}}"/>
+  <meta charset="UTF-8">
+</head>
+<body>
+  {% if app.session.get('login') != ""  %}
+  <header>
+    <nav>
+      <ul>
+        <a href=""><li >{{app.session.get('login')}} {{app.session.get('password')}}</li></a>
+        <a href="{{ path('ex_blog_deconnexion')}}"><li >Déconnexion</li></a>
+        <a href="{{ path('ex_blog_ajoute') }}"><li >Ajouter article</li></a>
+      </ul>
+    </nav>
+  </header>
+  {% else %}
+  <div class="home"><a href="{{ path('ex_blog_connexion')}}"><h1 style="color:black " >Connexion</h1></a></div>
+  <div class="home"><a href="{{ path('ex_blog_inscription')}}"><h1 style="color:black" >Inscription</h1></a></div>
+  {% endif %}
+  {% if app.session.get('login') != ""  %}
+  {% for vue in repertoire %}
+  {% if app.session.get('article_vu')[vue.id] is defined   %}
+  <article  class="red">
+    {% else %}
+    <article>
+      {%endif %}
+      <p ><a href="{{ path('ex_blog_pagedeux', {'id':vue.id}) }}">Article n°{{vue.id}}</a></p>
+      <h2>Titre:{{vue.titre}} </h2>
+      <p>Contenu:{{vue.contenu}} </p>
+      <a href="{{ path('ex_blog_supprimer', {'id':vue.id}) }}"><button >Supprimer article </button></a>
+      <a href="{{ path('ex_blog_modifier', {'id':vue.id}) }}"><button >Modifier article</button>
+      </article>
+      {% endfor %}
+      {% endif %}
+
+    </body>
+    </html>

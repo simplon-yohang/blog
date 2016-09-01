@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Connexion!</title>
+    <link  rel="stylesheet" href="{{asset('css/style.css')}}"/>
+    </head>
+    <body>
+      <article>
+      <h1>Connexion</h1>
+
+    <div class="well">
+      {{ form(form) }}
+    </div>
+    <h1>{{user.login}}</h1>
+    <h1>{{user.password}}</h1>
+
+
+
+
+    <p><a href="{{ path('ex_blog_homepage') }}">Retour homepage</a></p>
+  </article>
+    </body>
+</html>
